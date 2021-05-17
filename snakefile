@@ -1,8 +1,8 @@
 # snakefile template
 
 # Chris Baker
-# xxxxxx@xxxxx.com
-# XX Xxxxxxxxx XXXX
+# https://github.com/bakerccm
+# DD MMMM YYYY
 
 ################################
 ## get config file
