@@ -8,7 +8,6 @@
 ## get config file
 
 configfile: 'config/config.yaml'
-DATA_DIR = config['data_dir']
 SAMPLE_METADATA = config['sample_metadata']
 
 ################################
@@ -38,9 +37,9 @@ rule all:
 # 50 min per sample
 rule gzip_fastq:
     input:
-        DATA_DIR + '/data/{file}.fastq'
+        'data/{file}.fastq'
     output:
-        DATA_DIR + '/data/{file}.fastq.gz'
+        'data/{file}.fastq.gz'
     shell:
         'gzip {input}'
 
