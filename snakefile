@@ -8,7 +8,7 @@
 ## get config file
 
 configfile: 'config/config.yaml'
-SAMPLE_METADATA = config['sample_metadata']
+METADATA_FILE = config['sample_metadata']
 
 ################################
 ## wildcard constraints
@@ -21,8 +21,8 @@ wildcard_constraints:
 ## get sample and reference genome metadata
 
 import pandas as pd
-SAMPLES = pd.read_csv(SAMPLE_METADATA, sep = '\t', index_col = 'sample')
-ALL_SAMPLES = list(SAMPLES[(SAMPLES['project'] == '1') | (SAMPLES['project'] == '2')].index)
+METADATA = pd.read_csv(METADATA_FILE, sep = '\t', index_col = 'sample')
+ALL_SAMPLES = list(METADATA[(METADATA['project'] == '1') | (METADATA['project'] == '2')].index)
 
 ################################
 # default rule
