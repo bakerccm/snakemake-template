@@ -8,6 +8,10 @@
 /snakemake.err
 /snakemake.out
 
+# ignore resources directory
+/resources
+!/resources/useful_commands.txt # except this file inherited from template
+
 # ignore system files
 .DS_Store
 
