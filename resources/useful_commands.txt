@@ -30,7 +30,7 @@
 # only construct conda environments (provide file or rule etc that will cause a rule to run)
 # (use -n if you just want to see what environments will be created)
 
-    snakemake --use-conda --create-envs-only "out/some_output.bam"
+  snakemake -j 1 --use-conda --conda-create-envs-only "out/some_output.bam"
 
 # to re-run/continue a killed snakemake run
 
