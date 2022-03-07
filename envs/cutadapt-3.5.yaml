@@ -1,6 +1,7 @@
-name: snakemake
+name: cutadapt_3.5
 channels:
  - bioconda
  - conda-forge
+ - defaults
 dependencies:
- - snakemake=6.4.1
+ - cutadapt=3.5
