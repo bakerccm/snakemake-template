@@ -4,6 +4,9 @@
 # https://github.com/bakerccm
 # DD MMMM YYYY
 
+from snakemake.utils import min_version
+min_version("6.4.1")
+
 ################################
 ## get config file
 
