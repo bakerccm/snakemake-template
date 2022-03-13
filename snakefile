@@ -66,3 +66,10 @@ rule unaligned_bamfile:
         'out/unaligned/{sample}.bam.log'
     shell:
         'picard FastqToSam F1={input.read1} F2={input.read2} O={output} SM={wildcards.sample} 2>{log}'
+
+################################
+# include rules in other snakefile
+
+include: "rules/extra.smk"
+
+################################
