@@ -1,4 +1,4 @@
-# snakemake_template
+# snakemake-template
 
 Use this repo as a template when setting up a new analysis project with [Snakemake](snakemake.readthedocs.io)
 
