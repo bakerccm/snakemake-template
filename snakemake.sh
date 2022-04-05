@@ -9,10 +9,10 @@
 #SBATCH -e snakemake.err
 #SBATCH --mail-user=xxxxxxxx@xxxxx.com
 #SBATCH --mail-type=END
-##SBATCH --dependency=after:jobid[:jobid...] job can begin after specified jobs have started
-##SBATCH --dependency=afterany:jobid[:jobid...] job can begin after specified jobs have terminated
-##SBATCH --dependency=afterok:jobid[:jobid...] job can begin after specified jobs have completed with exit code zero
-##SBATCH --dependency=afternotok:jobid[:jobid...] job can begin after specified jobs have failed
+##SBATCH --dependency=after:jobid[:jobid...] # job can begin after specified jobs have started
+##SBATCH --dependency=afterany:jobid[:jobid...] # job can begin after specified jobs have terminated
+##SBATCH --dependency=afterok:jobid[:jobid...] # job can begin after specified jobs have completed with exit code zero
+##SBATCH --dependency=afternotok:jobid[:jobid...] # job can begin after specified jobs have failed
 
 # module load snakemake/3.12.0
 
