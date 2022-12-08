@@ -2,6 +2,7 @@
 # note trailing /* is required for use with !.gitkeep
 /data/*
 /out/*
+/figures/*
 
 # ignore snakemake working files
 /.snakemake
