@@ -5,7 +5,7 @@
 # DD MMMM YYYY
 
 from snakemake.utils import min_version
-min_version("6.4.1")
+min_version("7.25.0")
 
 ################################
 ## get config file
