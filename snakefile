@@ -5,7 +5,7 @@
 # DD MMMM YYYY
 
 from snakemake.utils import min_version
-min_version("6.4.1")
+min_version("7.25.0")
 
 ################################
 ## get config file
@@ -24,6 +24,8 @@ wildcard_constraints:
 ## get sample and reference genome metadata
 
 import pandas as pd
+# import os # for os.path.join("path", "to", "join.txt")
+
 METADATA = pd.read_csv(METADATA_FILE, sep = '\t', index_col = 'sample')
 ALL_SAMPLES = list(METADATA[(METADATA['project'] == '1') | (METADATA['project'] == '2')].index)
 
