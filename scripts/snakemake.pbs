@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#PBS -A $MY_SUBPROJECT_ID
+#PBS -q standard
+#PBS -l select=1:ncpus=192:mpiprocs=192
+#PBS -l walltime=02:00:00
+
+## see $SAMPLES_HOME/Application_Name/README and $SAMPLES_HOME/Application_Name/application_names
+#PBS -l application=other
+
+#PBS -N snakemake
+# #PBS -o pbs/snakemake.out
+# #PBS -e pbs/snakemake.err
+
+# Move to directory where job was submitted.
+# Otherwise, PBS uses ~ as working directory by default.
+# ** N.B. Job should be submitted from repository root **
+cd $PBS_O_WORKDIR
+
+source activate snakemake-7.25.0
+
+snakemake -c 1 --use-conda --unlock all
+snakemake -c 192 --use-conda --rerun-incomplete all
+
+exit

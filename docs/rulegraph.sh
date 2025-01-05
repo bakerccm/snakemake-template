@@ -1,11 +1,15 @@
-#!/bin/bash
+# run these commands from repo root to create the DAG, rulegraph and filegraph saved here
 
-# snakemake -j 1 --use-conda --rulegraph | dot -Tpdf >docs/rulegraph.pdf
-# snakemake -j 1 --use-conda --rulegraph | dot -Tpng >docs/rulegraph.png
+# the default rule 'all' should be sufficient to re-run the code in its entirety:
+snakemake -c 1 -n -F all
 
-snakemake -j 1 --use-conda --rulegraph >docs/temp
-dot -Tpdf docs/temp >docs/rulegraph.pdf
-dot -Tpng docs/temp >docs/rulegraph.png
-rm docs/temp
+# generate DAG etc as png:
+snakemake -c 1 -n -F all --dag | dot -Tpng >docs/snakemake_dag.png
+snakemake -c 1 -n -F all --rulegraph | dot -Tpng >docs/snakemake_rulegraph.png
+snakemake -c 1 -n -F all --filegraph | dot -Tpng >docs/snakemake_filegraph.png
 
-# alternatively, use --filegraph or --dag
+# generate DAG etc as svg:
+snakemake -c 1 -n -F all --dag | dot -Tsvg >docs/snakemake_dag.svg
+snakemake -c 1 -n -F all --rulegraph | dot -Tsvg >docs/snakemake_rulegraph.svg
+snakemake -c 1 -n -F all --filegraph | dot -Tsvg >docs/snakemake_filegraph.svg
+
